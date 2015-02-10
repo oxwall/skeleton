@@ -1,0 +1,66 @@
+<div class="page_description">
+    {text key="skeleton+description_access_level"}
+</div>
+
+<div>
+    <div style="margin-bottom: 10px;">
+    {text key='skeleton+access_level_adding_authorization_action'}
+    </div>
+
+    <div class="ow_std_margin code_reference">
+    <pre>
+    $authorization = OW::getAuthorization();
+
+    $authorization->addGroup('skeleton');
+
+    $authorization->addAction('skeleton', 'some_action');</pre>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+    {text key='skeleton+checking_if_user_is_authorized'}
+    </div>
+
+    <div class="ow_std_margin code_reference">
+    <pre>
+    if ( OW::getUser()->isAuthorized('skeleton', 'some_action') )
+    {
+        //show some content
+    }
+    else
+    {
+        $status = BOL_AuthorizationService::getInstance()->getActionStatus('skeleton', 'some_action');
+        if ( $status['status'] == BOL_AuthorizationService::STATUS_PROMOTED )
+        {
+            //show message about promoted permissions or redirect to subscribe page
+            print($status['msg']);
+        }
+        else
+        {
+            //show message about denied permissions or redirect to forbidden page
+            print($status['msg']);
+        }
+    }</pre>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+    {text key='skeleton+checking_if_user_is_a_moderator'}
+    </div>
+
+    <div class="ow_std_margin code_reference">
+    <pre>
+    if ( OW::getUser()->isAuthorized('skeleton') )
+    {
+        //show some other content
+    }</pre>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        {text key='skeleton+track_action'}
+    </div>
+
+    <div class="ow_std_margin code_reference">
+    <pre>
+    BOL_AuthorizationService::getInstance()->trackAction('skeleton', 'some_action');</pre>
+    </div>
+
+</div>

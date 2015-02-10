@@ -1,0 +1,40 @@
+<div class="page_description">
+    {text key="skeleton+description_localization"}
+
+    <div class="example_file">{text key="skeleton+example_file"} /ow_plugins/skeleton/controllers/localization.php</div>
+</div>
+
+{form name="LocalizationExampleForm"}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='key'}</td>
+        <td class="ow_value">{input name='key'}{error name='key'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='value'}</td>
+        <td class="ow_value">{input name='value'}{error name='value'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+
+</table>
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_right">{submit name='create' class='ow_ic_add ow_positive'}</div>
+</div>
+{/form}
+<div class="ow_center ow_stdmargin"><h2>{text key='skeleton+created_text_keys'}</h2></div>
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr>
+        <th>{text key='skeleton+text_key_values'}</th>
+        <th>{text key='skeleton+original_values'}</th>
+        <th>{text key='skeleton+actions'}</th>
+    </tr>
+    {foreach from=$keys item='key'}
+    <tr class="{cycle values='ow_alt2, ow_alt1'}">
+        <td class="ow_center">{ldelim}text key='skeleton+{$key.key}'{rdelim}</td>
+        <td class="ow_center">{text key="skeleton+`$key.key`"}</td>
+        <td class="ow_center"><a class="ow_lbutton ow_red" href="{$key.deleteUrl}" onclick="if (confirm('{text key="base+are_you_sure"}')) return true; else return false;" >{text key='base+delete'}</a></td>
+    </tr>
+    {/foreach}
+</table>

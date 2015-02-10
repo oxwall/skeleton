@@ -1,0 +1,61 @@
+<div class="page_description">
+    {text key="skeleton+description_routing"}
+</div>
+
+
+<div style="margin-bottom: 10px;">
+    {text key='skeleton+routing_adding_route'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    OW::getRouter()->addRoute(new OW_Route('routing-example', 'example/:some_param', 'SKELETON_CTRL_Example', 'someaction'));
+</pre>
+</div>
+
+<div style="margin-bottom: 10px;">
+    {text key='skeleton+routing_adding_route_desc'}
+
+</div>
+
+
+<div style="margin-bottom: 10px;">
+    {text key='skeleton+routing_classname'}
+</div>
+
+<div class="ow_std_margin code_reference">
+<pre>
+class PLUGINNAME_CTRL_Example extends OW_ActionController
+{
+    public function someaction($params)
+    {
+        //perform some actions and assign data to the view
+        $this->assign('some_param', $params['some_param']);
+    }
+}
+</pre>
+</div>
+
+<div style="margin-bottom: 10px;">
+    {text key='skeleton+routing_adding_view'}
+</div>
+
+<div style="margin-bottom: 10px;">
+    {text key='skeleton+routing_adding_menu_item'}
+</div>
+
+<div class="ow_std_margin code_reference">
+<pre>
+    OW::getNavigation()->addMenuItem(OW_Navigation::MAIN, 'routing-example', 'skeleton', 'routing_example_menu_item', OW_Navigation::VISIBLE_FOR_ALL);</pre>
+</div>
+
+<div style="margin-bottom: 10px;">
+    {text key='skeleton+routing_adding_menu_item_desc'}
+
+</div>
+
+<div class="ow_std_margin code_reference">
+<pre>
+    OW::getNavigation()->deleteMenuItem('skeleton', 'routing_example_menu_item');
+</div>
+

@@ -1,0 +1,47 @@
+
+<div class="page_description">
+    {text key="skeleton+description_notifications"}
+
+    <div class="example_file">
+        <table>
+            <tr>
+                <td>
+                    {text key="skeleton+example_file"}
+                </td>
+                <td>
+                    /ow_plugins/skeleton/controllers/notifications.php;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    /ow_plugins/skeleton/classes/notification_example_form.php
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{form name="NotificationExampleForm"}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr class="ow_alt1 ow_tr_first">
+        <td class="ow_label">{label name='content'}</td>
+        <td class="ow_value">{input name='content'}{error name='content'}</td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='image'}</td>
+        <td class="ow_value">{input name='image'}{error name='image'}</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="ow_center ow_small">
+            {text key='skeleton+notification_note'}
+        </td>
+    </tr>
+</table>
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_right">{submit name='send' class='ow_positive'}</div>
+</div>
+{/form}
+

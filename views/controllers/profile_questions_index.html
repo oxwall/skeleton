@@ -1,0 +1,26 @@
+<div class="page_description">
+    {text key="skeleton+description_profile_questions"}
+
+    <div class="example_file">{text key="skeleton+example_file"} /ow_plugins/skeleton/controllers/profile_questions.php</div>
+</div>
+
+
+{form name="ProfileQuestionsExampleForm"}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr class="ow_alt1 ow_tr_first">
+        <td class="ow_label">{label name='username'}</td>
+        <td class="ow_value">{input name='username'}{error name='username'}</td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='sex'}</td>
+        <td class="ow_value">{input name='sex'}{error name='sex'}</td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='birthdate'}</td>
+        <td class="ow_value">{input name='birthdate'}{error name='birthdate'}</td>
+    </tr>
+</table>
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_right">{submit name='save' class='ow_positive'}</div>
+</div>
+{/form}

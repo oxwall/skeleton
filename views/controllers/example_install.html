@@ -1,0 +1,153 @@
+<div class="page_description">
+    {text key="skeleton+description_install"}
+</div>
+
+<h2>/install.php</h2>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_creating_tables'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    $query = "CREATE TABLE IF NOT EXISTS `" . OW_DB_PREFIX . "skeleton_record` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `text` varchar(255) NOT NULL,
+    `extendedText` text NOT NULL,
+    `choice` int(11) NOT NULL,
+    PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
+
+    OW::getDbo()->query($query);</pre>
+</div>
+
+
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_lang_import'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    $path = OW::getPluginManager()->getPlugin('skeleton')->getRootDir() . 'langs.zip';
+    BOL_LanguageService::getInstance()->importPrefixFromZip($path, 'skeleton');</pre>
+</div>
+
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_adding_config'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    OW::getConfig()->addConfig('skeleton', 'some_config', 'Some setting of the plugin');</pre>
+</div>
+
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_adding_preference'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    $preference = BOL_PreferenceService::getInstance()->findPreference('skeleton_some_preference');
+
+    if ( empty($preference) )
+    {
+    $preference = new BOL_Preference();
+    }
+
+    $preference->key = 'skeleton_some_preference';
+    $preference->sectionName = 'general';
+    $preference->defaultValue = 0;
+    $preference->sortOrder = 10000;
+
+    BOL_PreferenceService::getInstance()->savePreference($preference);</pre>
+</div>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_adding_setting_route'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    OW::getPluginManager()->addPluginSettingsRouteName('skeleton', 'skeleton_admin_settings');</pre>
+</div>
+
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_adding_authorization'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    $authorization = OW::getAuthorization();
+
+    $authorization->addGroup('skeleton');
+
+    $authorization->addAction('skeleton', 'some_action');</pre>
+
+</div>
+
+<h2>/activate.php</h2>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_adding_widgets'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    $widget = BOL_ComponentAdminService::getInstance()->addWidget('BASE_CMP_UserListWidget', false);
+
+    $placeWidget = BOL_ComponentAdminService::getInstance()->addWidgetToPlace($widget, BOL_ComponentAdminService::PLACE_INDEX);
+
+    BOL_ComponentAdminService::getInstance()->addWidgetToPosition($placeWidget, BOL_ComponentAdminService::SECTION_LEFT );</pre>
+
+</div>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_adding_menu_item'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    OW::getNavigation()->addMenuItem(OW_Navigation::MAIN, 'skeleton-index', 'skeleton', 'main_menu_item', OW_Navigation::VISIBLE_FOR_ALL);</pre>
+
+</div>
+
+
+<h2>/deactivate.php</h2>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_deleting_menu_item'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    OW::getNavigation()->deleteMenuItem('skeleton', 'main_menu_item');</pre>
+
+</div>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_deleting_widgets'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    BOL_ComponentAdminService::getInstance()->deleteWidget('BASE_CMP_UserListWidget');</pre>
+
+</div>
+
+<h2>/uninstall.php</h2>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    {text key='skeleton+install_uninstalling'}
+</div>
+
+<div class="ow_std_margin code_reference">
+    <pre>
+    BOL_FlagService::getInstance()->deleteByType('skeleton_flag');
+    BOL_TagService::getInstance()->deleteEntityTypeTags('skeleton_tag');</pre>
+
+</div>
+

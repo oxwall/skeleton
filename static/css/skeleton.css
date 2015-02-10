@@ -1,0 +1,27 @@
+.skeleton-menu{
+    margin-left: 10px;
+}
+
+.example_file{
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.code_reference{
+    overflow: auto;
+    word-wrap: normal;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-shadow: inset 0 0 .5em #ccc;
+    padding: .7em 1em;
+}
+
+.page_description{
+    border-style: solid;
+    border-color: #d4d4d4;
+    border-width: 1px;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: #eee;
+}

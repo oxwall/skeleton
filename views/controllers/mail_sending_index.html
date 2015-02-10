@@ -1,0 +1,40 @@
+
+<div class="page_description">
+    {text key="skeleton+description_mail_sending"}
+
+    <div class="example_file">{text key="skeleton+example_file"} /ow_plugins/skeleton/controllers/mail_sending.php</div>
+</div>
+
+
+{form name="MailSendingExampleForm"}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='from'}</td>
+        <td class="ow_value">{input name='from'}{error name='from'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='to'}</td>
+        <td class="ow_value">{input name='to'}{error name='to'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='subject'}</td>
+        <td class="ow_value">{input name='subject'}{error name='subject'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='body'}</td>
+        <td class="ow_value">{input name='body'}{error name='body'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='deliver'}</td>
+        <td class="ow_value">{input name='deliver'}{error name='deliver'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+</table>
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_right">{submit name='send' class='ow_positive'}</div>
+</div>
+{/form}

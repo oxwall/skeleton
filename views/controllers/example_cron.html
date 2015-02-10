@@ -1,0 +1,34 @@
+<div class="page_description">
+    {text key="skeleton+description_cron"}
+</div>
+
+
+<div>
+    <div style="margin-bottom: 10px;">
+        {text key='skeleton+cron_job_of_some_action'}
+    </div>
+
+    <div class="ow_std_margin code_reference">
+    <pre>class SKELETON_Cron extends OW_Cron
+{
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->addJob('cronJobExample', 60);
+    }
+
+    public function run()
+    {
+        //perform some action
+    }
+
+    public function cronJobExample()
+    {
+        //perform some action once in an hour
+    }
+}</pre>
+    </div>
+
+
+</div>

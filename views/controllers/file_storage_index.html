@@ -1,0 +1,31 @@
+<div class="page_description">
+    {text key="skeleton+description_file_storage"}
+
+    <div class="example_file">{text key="skeleton+example_file"} /ow_plugins/skeleton/controllers/file_storage.php</div>
+</div>
+
+{if $showForm}
+{form name="FileStorageExampleForm"}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='image'}</td>
+        <td class="ow_value">{input name='image'}{error name='image'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+    <tr class="ow_alt1 ow_tr_first">
+        <td class="ow_label">{label name='description'}</td>
+        <td class="ow_value">{input name='description'}{error name='description'}</td>
+        <td class="ow_desc ow_small"></td>
+    </tr>
+</table>
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_right">{submit name='submit' class='ow_ic_add ow_positive'}</div>
+</div>
+{/form}
+{else}
+<div class="ow_center">
+    <div class="ow_std_margin"><img src="{$imageUrl}"/></div>
+    {if $description}<div class="ow_std_margin"><p>{text key='skeleton+description'}:</p>{$description}</div>{/if}
+    <div class="ow_std_margin"><a class='ow_center' href="{$backUrl}">{text key='skeleton+upload_again'}</a></div>
+</div>
+{/if}

@@ -1,0 +1,9 @@
+<div class="ow_stdmargin page_description">{text key='skeleton+description_index'}</div>
+
+<ul class="skeleton-menu">
+    {foreach from=$menu item="menuItem"}
+        <li>
+            <a href="{$menuItem.url}">{$menuItem.label}</a>
+        </li>
+    {/foreach}
+</ul>

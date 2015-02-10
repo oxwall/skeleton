@@ -1,0 +1,117 @@
+{style}
+    .skeleton-form-output {
+        padding: 10px;
+        border-width: 1px;
+    }
+
+{/style}
+
+<div class="page_description">
+    {text key="skeleton+description_forms"}
+
+    <div class="example_file">
+        <table>
+            <tr>
+                <td>
+                    {text key="skeleton+example_file"}
+                </td>
+                <td>
+                    /ow_plugins/skeleton/controllers/forms.php;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    /ow_plugins/skeleton/classes/form.php
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{if !empty($submitedFields)}
+    <h3 class="ow_center" style="margin-bottom: 10px;">{text key="skeleton+form_output_data"}</h3>
+    <div class="ow_stdmargin skeleton-form-output ow_border">
+        {foreach from=$submitedFields item="submitedField"}
+            <div class="skeleton-form-output-line">
+                {$submitedField.label} = "{$submitedField.value}"
+            </div>
+        {/foreach}
+    </div>
+{/if}
+
+{form name="skeleton_form"}
+
+    <table class="ow_table_1 ow_form ow_stdmargin">
+        <tbody>
+            <tr class="ow_tr_first ow_alt1">
+                    <td class="ow_label">
+                        {label name="text"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="text"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        {desc name="text"}
+                    </td>
+            </tr>
+            <tr class="ow_alt2">
+                    <td class="ow_label">
+                        {label name="extended_text"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="extended_text"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        &nbsp;
+                    </td>
+            </tr>
+            
+            <tr class="ow_alt1">
+                    <td class="ow_label">
+                        {label name="selectbox"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="selectbox"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        &nbsp;
+                    </td>
+            </tr>
+            
+            <tr class="ow_alt2">
+                    <td class="ow_label">
+                        {label name="multichoice"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="multichoice"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        &nbsp;
+                    </td>
+            </tr>
+            
+            <tr class="ow_tr_last ow_alt1">
+                    <td class="ow_label">
+                        {label name="file"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="file"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        &nbsp;
+                    </td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <div class="clearfix ow_stdmargin">
+        <div class="ow_right">
+             {submit name="submit"}
+        </div>
+    </div>
+
+{/form}

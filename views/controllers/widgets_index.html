@@ -1,0 +1,41 @@
+<div class="page_description">
+    {text key="skeleton+description_widgets"}
+
+    <div class="example_file">{text key="skeleton+example_file"} /ow_plugins/skeleton/controllers/widgets.php</div>
+</div>
+
+{form name="WidgetExampleForm"}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{text key='skeleton+widget'}</td>
+        <td class="ow_value">{text key='skeleton+latest_users_widget'}</td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='place'}</td>
+        <td class="ow_value">{input name='place'}{error name='place'}</td>
+    </tr>
+    <tr class="ow_alt1 ow_tr_last">
+        <td class="ow_label">{label name='section'}</td>
+        <td class="ow_value">{input name='section'}{error name='section'}</td>
+    </tr>
+</table>
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_right">{submit name='add' class='ow_positive'}</div>
+</div>
+{/form}
+
+<div class="ow_center ow_stdmargin"><h2>{text key='skeleton+created_widgets'}</h2></div>
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr>
+        <th>{text key='skeleton+widget_title'}</th>
+        <th>{text key='skeleton+widget_placement'}</th>
+        <th>&nbsp;</th>
+    </tr>
+{foreach from=$addedComponentList item='component'}
+    <tr onmouseover="$('a.del-cont', this).show();" onmouseout="$('a.del-cont', this).hide();">
+        <td class="ow_label">{text key='skeleton+latest_users_widget'}</td>
+        <td class="ow_value">{$component.place}</td>
+        <td class="ow_center ns-hover-block" style="width: 100px;"><a style="display: none;" class="ow_lbutton ow_red del-cont" href="{$component.deleteUrl}" onclick="if (confirm('{text key="base+are_you_sure"}')) return true; else return false;">{text key='skeleton+remove'}</a></td>
+    </tr>
+{/foreach}
+</table>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+    <name>Plugin Skeleton</name>
+    <key>skeleton</key>
+    <description>This plugin is for developers who want to create Oxwall plugins. Contains a set of working examples of the various pieces of Oxwall functionality.</description>
+    <author>Oxwall Foundation</author>
+    <authorEmail>plugins@oxwall.org</authorEmail>
+    <authorUrl>http://www.oxwall.org/foundation</authorUrl>
+    <developerKey>e547ebcf734341ec11911209d93a1054</developerKey>
+    <build>2</build>
+    <copyright>(C) 2009 Oxwall Foundation. All rights reserved.</copyright>
+    <license>The BSD License</license>
+    <licenseUrl>http://www.opensource.org/licenses/bsd-license.php</licenseUrl>
+</plugin>

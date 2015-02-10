@@ -1,0 +1,26 @@
+<div class="page_description">
+    {text key="skeleton+description_newsfeed"}
+
+    <div class="example_file">{text key="skeleton+example_file"} /ow_plugins/skeleton/controllers/newsfeed.php</div>
+</div>
+
+{form name="NewsfeedExampleForm"}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    <tr class="ow_alt1 ow_tr_first">
+        <td class="ow_label">{decorator name='ipc' addClass='ow_automargin ow_supernarrow' avatar=$avatar content=""}</td>
+        <td>{$username}</td>
+    </tr>
+    <tr class="ow_alt1 ow_tr_first">
+        <td class="ow_label">{label name='content'}</td>
+        <td class="ow_value">{input name='content'}{error name='content'}</td>
+    </tr>
+    <tr class="ow_alt2 ow_tr_first">
+        <td class="ow_label">{label name='place'}</td>
+        <td class="ow_value">{input name='place'}{error name='place'}</td>
+    </tr>
+</table>
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_right">{submit name='submit' class='ow_positive'}</div>
+</div>
+{/form}
+

@@ -1,0 +1,118 @@
+{style}
+
+.skeleton-list {
+    padding: 10px;
+}
+
+.skeleton-list-item {
+    padding: 5px;
+    border-width: 1px;
+}
+
+{/style}
+
+<div class="page_description">
+    {text key="skeleton+description_database"}
+
+    <div class="example_file">
+        <table>
+            <tr>
+                <td>
+                    {text key="skeleton+example_file"}
+                </td>
+                <td>
+                    /ow_plugins/skeleton/controllers/example.php;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    /ow_plugins/skeleton/bol/service.php;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    /ow_plugins/skeleton/bol/record.php;
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    /ow_plugins/skeleton/bol/record_dao.php
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{if $list}<h3 class="ow_center" style="margin-bottom: 10px;">{text key="skeleton+database_records"}</h3>{/if}
+    <table class="ow_table_1 ow_form ow_stdmargin">
+    {foreach from=$list item="listItem"}
+        <tr onmouseover="$('a.del-cont', this).show();" onmouseout="$('a.del-cont', this).hide();" class="skeleton-list-item ow_smallmargin ow_border">
+            <td>
+                <div>{text key="skeleton+forms_text_field_label"}: {$listItem.text}</div>
+                <div>{text key="skeleton+forms_textarea_field_label"}: {$listItem.extendedText}</div>
+                <div>{text key="skeleton+forms_selectbox_field_label"}: {$listItem.choice}</div>
+            </td>
+            <td class="ow_center ns-hover-block" style="width: 100px;"><a style="display: none;" class="ow_lbutton ow_red del-cont" href="{$listItem.deleteUrl}" onclick="if (confirm('{text key="base+are_you_sure"}')) return true; else return false;">{text key='base+delete'}</a></td>
+        </tr>
+    {/foreach}
+    </table>
+
+{form name="database_form"}
+
+    <table class="ow_table_1 ow_form ow_stdmargin">
+        <tbody>
+            <tr class="ow_tr_first ow_alt1">
+                    <td class="ow_label">
+                        {label name="text"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="text"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        {desc name="text"}
+                    </td>
+            </tr>
+            
+            <tr class="ow_alt2">
+                    <td class="ow_label">
+                        {label name="extended_text"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="extended_text"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        {desc name="extended_text"}
+                    </td>
+            </tr>
+            
+            <tr class="ow_alt1">
+                    <td class="ow_label">
+                        {label name="selectbox"}
+                    </td>
+                    <td class="ow_value">
+                        {input name="selectbox"}
+                    </td>
+                    <td class="ow_desc ow_small">
+                        {desc name="selectbox"}
+                    </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="clearfix ow_stdmargin">
+        <div class="ow_right">
+             {submit name="submit"}
+        </div>
+    </div>
+
+{/form}
